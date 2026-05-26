@@ -48,7 +48,7 @@ function scrollActive() {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 100;
         const sectionId = current.getAttribute('id');
-        
+
         const link = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
         if (link) {
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -72,14 +72,14 @@ if (heroSection && cubes.length > 0) {
     heroSection.addEventListener('mousemove', (e) => {
         const x = (window.innerWidth - e.pageX * 2) / 100;
         const y = (window.innerHeight - e.pageY * 2) / 100;
-        
+
         cubes.forEach((cube, index) => {
             // Give different cubes different speeds based on index
-            const speed = (index + 1) * 2; 
+            const speed = (index + 1) * 2;
             cube.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
         });
     });
-    
+
     // Reset transform when mouse leaves
     heroSection.addEventListener('mouseleave', () => {
         cubes.forEach((cube) => {
@@ -94,7 +94,7 @@ if (heroSection && cubes.length > 0) {
 const universeTrack = document.querySelector('.universe-track');
 if (universeTrack) {
     universeTrack.addEventListener('wheel', (e) => {
-        if(window.innerWidth > 768) {
+        if (window.innerWidth > 768) {
             e.preventDefault();
             universeTrack.scrollLeft += e.deltaY;
         }
@@ -162,23 +162,23 @@ const nextBtn = document.getElementById('spot-next');
 
 function updateSpotlight(index) {
     const data = spotlightData[index];
-    
+
     // Smooth transition
     spotImg.style.opacity = '0';
     spotImg.style.transform = 'translateX(20px)';
-    
+
     setTimeout(() => {
         // Update text nodes carefully
         spotTitle.innerHTML = `${data.title} <br><span class="highlight" id="spotlight-highlight">${data.highlight}</span>`;
         spotPrice.innerText = data.price;
         spotImg.src = data.img;
         spotImg.alt = data.title + " " + data.highlight;
-        
+
         // Update stats
         armorBar.style.width = data.armor;
         mobilityBar.style.width = data.mobility;
         weaponBar.style.width = data.weapon;
-        
+
         spotImg.style.opacity = '1';
         spotImg.style.transform = 'translateX(0)';
     }, 300);
@@ -206,7 +206,7 @@ if (loginForm) {
         const password = document.getElementById('password').value;
 
         // Mock Admin Authentication
-        if (email === 'admin@gst.com' && password === 'admin123') {
+        if (email === 'admin@co.nan' && password === 'admin123') {
             localStorage.setItem('gst_admin_logged', 'true');
             window.location.href = 'admin.html';
         } else {
