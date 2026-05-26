@@ -195,3 +195,22 @@ if (nextBtn && prevBtn) {
         updateSpotlight(currentSpotlight);
     });
 }
+/* =========================================
+   LOGIN HANDLING
+   ========================================= */
+const loginForm = document.querySelector('.login-form');
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Mock Admin Authentication
+        if (email === 'admin@gst.com' && password === 'admin123') {
+            localStorage.setItem('gst_admin_logged', 'true');
+            window.location.href = 'admin.html';
+        } else {
+            alert('Thông tin định danh không chính xác. Vui lòng thử lại!');
+        }
+    });
+}
