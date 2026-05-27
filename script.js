@@ -79,16 +79,7 @@ if (heroSection && cubes.length > 0) {
             // Give different cubes different speeds based on index
             const speed = (index + 1) * 2;
             cube.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-        });
-    });
-
-        
-        cubes.forEach((cube, index) => {
-            // Give different cubes different speeds based on index
-            const speed = (index + 1) * 2; 
-            cube.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-        });
-    });
+        });    });
     
     // Reset transform when mouse leaves
     heroSection.addEventListener('mouseleave', () => {
@@ -105,7 +96,6 @@ const universeTrack = document.querySelector('.universe-track');
 if (universeTrack) {
     universeTrack.addEventListener('wheel', (e) => {
         if (window.innerWidth > 768) {
-        if(window.innerWidth > 768) {
             e.preventDefault();
             universeTrack.scrollLeft += e.deltaY;
         }
@@ -332,6 +322,7 @@ if (tutorialPortal) {
     if (guideSearch) {
         guideSearch.addEventListener('input', filterTutorials);
     }
+}
 /* =========================================
    SPOTLIGHT SLIDER LOGIC
    ========================================= */
@@ -425,11 +416,11 @@ const loginForm = document.querySelector('.login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = document.getElementById('username').value;
+        const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
         // Mock Admin Authentication
-        if (email === 'admin@co.nan' && password === 'admin123') {
+        if (username === 'admin' && password === '123') {
             localStorage.setItem('gst_admin_logged', 'true');
             window.location.href = 'admin.html';
         } else {
